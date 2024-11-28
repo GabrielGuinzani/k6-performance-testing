@@ -14,15 +14,15 @@ export const options = {
     content_OK: ['rate>0.95']
   },
   stages: [
+    { duration: '30s', target: 30 },
+    { duration: '30s', target: 40 },
+    { duration: '30s', target: 40 },
+    { duration: '30s', target: 40 },
     { duration: '30s', target: 100 },
-    { duration: '30s', target: 120 },
-    { duration: '30s', target: 120 },
-    { duration: '30s', target: 120 },
+    { duration: '30s', target: 100 },
+    { duration: '30s', target: 100 },
     { duration: '30s', target: 200 },
     { duration: '30s', target: 200 },
-    { duration: '30s', target: 200 },
-    { duration: '30s', target: 225 },
-    { duration: '30s', target: 225 },
     { duration: '30s', target: 300 }
   ]
 };
@@ -50,7 +50,7 @@ export default function () {
     'Response has quote': () => JSON.parse(res.body).quote !== undefined,
     'Quote is not empty': () => JSON.parse(res.body).quote.trim().length > 0,
     'Quote is a string': () => typeof JSON.parse(res.body).quote === 'string',
-    'Quote starts with "I am"': () =>
-      JSON.parse(res.body).quote.startsWith('I am')
+    'Quote starts with "Kanye says: "': () =>
+      JSON.parse(res.body).quote.startsWith('Kanye says: ')
   });
 }

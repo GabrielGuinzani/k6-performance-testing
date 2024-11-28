@@ -47,7 +47,7 @@ export default function () {
   RateContentOK.add(res.status === OK);
 
   check(res, {
-    'GET Kanye Quote - Status 200': () => res.status === OK,
+    'GET Kanye Quote - Status 200 ': () => res.status === OK,
     'Response has quote': () => JSON.parse(res.body).quote !== undefined,
     'Quote is not empty': () => JSON.parse(res.body).quote.trim().length > 0,
     'Quote is a string': () => typeof JSON.parse(res.body).quote === 'string'

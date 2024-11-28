@@ -27,17 +27,11 @@ export function handleSummary(data) {
 }
 
 export default function () {
-  const baseUrl = 'https://test.k6.io/';
-
-  const params = {
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  };
+  const baseUrl = 'https://api.kanye.rest';
 
   const OK = 200;
 
-  const res = http.get(`${baseUrl}`, params);
+  const res = http.get(`${baseUrl}`);
 
   getContactsDuration.add(res.timings.duration);
 

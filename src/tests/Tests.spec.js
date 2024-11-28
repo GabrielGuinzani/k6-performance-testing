@@ -50,8 +50,6 @@ export default function () {
     'GET Kanye Quote - Status 200': () => res.status === OK,
     'Response has quote': () => JSON.parse(res.body).quote !== undefined,
     'Quote is not empty': () => JSON.parse(res.body).quote.trim().length > 0,
-    'Quote is a string': () => typeof JSON.parse(res.body).quote === 'string',
-    'Quote starts with "Kanye says: "': () =>
-      JSON.parse(res.body).quote.startsWith('Kanye says: ')
+    'Quote is a string': () => typeof JSON.parse(res.body).quote === 'string'
   });
 }

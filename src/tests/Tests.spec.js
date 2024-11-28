@@ -38,6 +38,7 @@ export default function () {
   RateContentOK.add(res.status === OK);
 
   check(res, {
-    'GET Contacts - Status 200': () => res.status === OK
+    'GET Contacts - Status 200': () => res.status === OK,
+    'Response has quote': () => JSON.parse(res.body).quote !== undefined
   });
 }
